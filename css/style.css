@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Rubik+Burned&display=swap');
+
+:root {
+    --font-family-rubik-burned: 'Rubik Burned', system-ui;
+    --font-family-quicksand: 'Quicksand', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-family-quicksand);
+}
+
+.go-to {
+    color: white;
+    text-decoration: none;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 20px;
+    width: 80px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.scoreboard-parent {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: black;
+}
+
+.page-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-quicksand);
+}
+
+.inputs-div {
+    height: 60px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: rgb(204, 204, 204);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.inputs-div span {
+    font-size: 30px;
+    margin-right: 20px;
+    font-family: var(--font-family-quicksand);
+}
+
+.inputs-div input {
+    width: 120px;
+    height: 30px;
+    font-size: 25px;
+    margin-left: 30px;
+    border: 1px dotted black;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: rgb(230, 230, 230);
+    font-family: var(--font-family-quicksand);
+}
+
+button {
+    height: 30px;
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: var(--font-family-quicksand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(208, 208, 208);
+}
+button:hover {
+    outline: gray solid 2px;
+    border-style: dotted;
+}
+
+#nextButton {
+    background-color: greenyellow;
+    display: none;
+}
+
+.enter {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.winlose {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    font-size: 50px;
+    display: none;
+}
+
+#startNewGame {
+    height: 30px;
+    width: 200px;
+    position: absolute;
+    top: 95px;
+    right: 30px;
+    display: none;
+}
+
+#victory {
+    display: none;
+    color: greenyellow;
+}
+
+#gameOver {
+    display: none;
+    color: red;
+}
+
+@keyframes openSolution {
+    from {
+        height: 55px;
+    }
+
+    to {
+        height: 200px;
+    }
+}
+@keyframes closeSolution {
+    from {
+        height: 200px;
+    }
+
+    to {
+        height: 55px;
+    }
+}
+
+#solutionDiv {
+    display: none;
+    width: 400px;
+    height: 55px;
+    background-color: gray;
+    border: 2px solid black;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 200px);
+}
+#solutionDiv .head {
+    height: 55px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#solutionDiv .head span {
+    font-size: 35px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+#solutionDiv table {
+    height: calc(100% - 55px);
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+#solutionDiv table tr {
+    height: 50px;
+}
+
+#solutionDiv table th,
+#solutionDiv table td {
+    width: calc(100% / 3);
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#solutionDiv table td {
+    margin-bottom: 20px;
+}
+
+.nodisplay {
+    display: none !important;
+}
+
+.feedback {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgb(209, 209, 209);
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feedback img {
+    height: 30px;
+    width: 30px;
+}

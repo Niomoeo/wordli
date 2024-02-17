@@ -1,0 +1,128 @@
+#german {
+    background: none;
+    border: 2px solid black;
+}
+
+.add-button {
+    margin-bottom: 10px;
+}
+
+.reveal-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;
+}
+
+@keyframes openReveal {
+    from {
+        height: 0;
+        width: 0;
+    }
+
+    to {
+        height: 90vh;
+        width: 90vh;
+    }
+}
+@keyframes closeReveal {
+    from {
+        height: 90vh;
+        width: 90vh;
+    }
+
+    to {
+        height: 0;
+        width: 0;
+    }
+}
+
+
+#revealDiv {
+    z-index: 10;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: gray;
+    border: 2px solid black;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 10px 0 0 0;
+}
+
+.reveal-div-inside {
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.reveal-div-inside table {
+    width: 100%;
+    margin-top: 55px;
+}
+
+.reveal-div-inside table th,
+.reveal-div-inside table td {
+    padding-left: 20px;
+    text-align: start;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.reveal-div-inside table td {
+    font-size: 20px;
+}
+
+.close {
+    position: absolute;
+    bottom: calc(90vh - 45px);
+    right: calc(90vh - 45px);
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(230, 55, 55);
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.close img {
+    height: 20px;
+    width: 20px;
+}
+
+.get-default {
+    height: 30px;
+    width: 130px;
+    position: absolute;
+    right: calc(90vh - 140px);
+    bottom: 10px;
+    z-index: 30;
+}
+
+.remove-words {
+    height: 30px;
+    width: 30px;
+    background: none;
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 30;
+}
+.remove-words img {
+    height: inherit;
+    width: inherit;
+}
+.remove-words:hover {
+    border: none;
+    background: none;
+    height: 35px;
+    width: 35px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add words | Wordli</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/add.css">
+</head>
+
+<body>
+  <a class="go-to" href="index.html">Go test</a>
+
+  <div class="page-content">
+
+    <div class="inputs-div">
+      <input id="german" placeholder="sein">
+      <input id="infinitive" type="text" placeholder="be">
+      <input id="simplePast" type="text" placeholder="was/were">
+      <input id="pastParticiple" type="text" placeholder="been">
+    </div>
+
+    <button onclick="addWord(); return false;" class="add-button">add</button>
+    <span>press ENTER to add</span>
+
+    <button class="reveal-button" onclick="openReveal(); return false;">Reveal added words</button>
+
+    <div id="revealDiv">
+      <div class="reveal-div-inside" id="revealDivInside">
+        <button class="close" id="closeRevealButton" onclick="closeReveal(); return false;">
+          <img src="img/x.png" alt="x">
+        </button>
+
+        <table id="revealTable">
+          <tr>
+            <th>In german</th>
+            <th>Infinitive</th>
+            <th>Simple past</th>
+            <th>Past participle</th>
+          </tr>
+        </table>
+
+        <button class="get-default" id="getDefaultButton" onclick="setDefaultWords();">Get default</button>
+        <button class="remove-words" onclick="removeAllWords()">
+          <img src="img/trash.png" alt="trash">
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/add.js"></script>
+</body>
+
+</html>
