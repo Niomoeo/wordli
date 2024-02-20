@@ -13,18 +13,23 @@ const maxScore = document.getElementById('maxScore');
 const endGame = function () {
     pageContent.style.display = "none";
 
-    const score = Number(document.getElementById('scoreboard').innerHTML);
-    if (score >= 1) {
+    let score = Number(document.getElementById('scoreboard').innerHTML);
+    let maxScore = Number(document.getElementById('maxScore').innerHTML);
+    let scoreDifference = Math.round((score / maxScore) * 100 * 10) / 10;
+    // when the score is >= 90% of maxScore, you win
+    if (scoreDifference >= 90) {
         victory.style.display = "block";
         startButton.style.display = "block";
         scoreboardParent.style.color = "greenyellow";
 
         startButton.style.top = "95px";
+        alert('Your percentage is: ' + scoreDifference + '%. You have over 90% correct and win! PeepoHappy');
     } else {
         gameOver.style.display = "block";
         startButton.style.display = "block";
         startButton.style.top = "95px";
         scoreboardParent.style.color = "red";
+        alert('Your percentage is: ' + scoreDifference + "%. You don't have 90% correct and lose :(");
     };
 };
 const startNewGame = function () {
@@ -99,7 +104,7 @@ const nextWord = function () {
     checkButton.style.backgroundColor = "rgb(208, 208, 208)";
     nextButton.style.display = "none";
 
-    if (words.length <= 1) {
+    if (words.length <= 0) {
         endGame();
         console.log("isch fertig");
         return;
@@ -127,8 +132,27 @@ const nextWord = function () {
     }
 };
 
+// todo ! muss noch komplexer sein mit attribut () wo man sagen kann welche inputs z.B. grau werden.
+/* const infinitiveInput = document.getElementById("infinitive");
+const simplePastInput = document.getElementById("simplePast");
+const pastParticipleInput = document.getElementById("pastParticiple");
+const inputsArray = [infinitiveInput, simplePastInput, pastParticipleInput];
+const inputsGrey = function () {
+    
+};
+const inputsRed = function () {
+    
+};
+const blockInputs = function () {
+    
+};
+const resetInputs = function () {
+    
+}; */
+
 var falseAttempts = 0;
-const checkSolution = function () {
+const checkSolution = function (doCorrect) {
+    // todo ! die drei nachfolgenden consts müssen entfernt werden, wenn der kommentar oben verschwindet
     const infinitiveInput = document.getElementById("infinitive");
     const simplePastInput = document.getElementById("simplePast");
     const pastParticipleInput = document.getElementById("pastParticiple");
@@ -136,7 +160,7 @@ const checkSolution = function () {
     const checkButton = document.getElementById("checkButton");
     const nextButton = document.getElementById("nextButton");
 
-    if (infinitiveInput.value == infinitiveInput.getAttribute("dataSolution") && simplePastInput.value == simplePastInput.getAttribute("dataSolution") && pastParticipleInput.value == pastParticipleInput.getAttribute("dataSolution")) {
+    if (doCorrect || infinitiveInput.value == infinitiveInput.getAttribute("dataSolution") && simplePastInput.value == simplePastInput.getAttribute("dataSolution") && pastParticipleInput.value == pastParticipleInput.getAttribute("dataSolution")) {
         checkButton.style.display = "none";
         checkButton.style.backgroundColor = "unset";
         nextButton.style.display = "block";
@@ -144,7 +168,7 @@ const checkSolution = function () {
         falseAttempts = 0;
         plusScore();
     } else {
-        if (falseAttempts >= 3) {
+        if (falseAttempts >= 2) {
             checkButton.style.display = "none";
             checkButton.style.backgroundColor = "unset";
             nextButton.style.display = "block";
