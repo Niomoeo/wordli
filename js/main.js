@@ -162,10 +162,14 @@ const checkSolution = function (doCorrect) {
     const simplePastInput = document.getElementById("simplePast");
     const pastParticipleInput = document.getElementById("pastParticiple");
 
+    const infinitiveSolution = infinitiveInput.getAttribute("dataSolution");
+    const simplePastSolution = simplePastInput.getAttribute("dataSolution");
+    const pastParticipleSolution = pastParticipleInput.getAttribute("dataSolution");
+
     const checkButton = document.getElementById("checkButton");
     const nextButton = document.getElementById("nextButton");
 
-    if (doCorrect || infinitiveInput.value == infinitiveInput.getAttribute("dataSolution") && simplePastInput.value == simplePastInput.getAttribute("dataSolution") && pastParticipleInput.value == pastParticipleInput.getAttribute("dataSolution")) {
+    if (doCorrect || infinitiveInput.value == infinitiveSolution && simplePastInput.value == simplePastSolution && pastParticipleInput.value == pastParticipleSolution) {
         checkButton.style.display = "none";
         checkButton.style.backgroundColor = "unset";
         nextButton.style.display = "block";

@@ -42,6 +42,9 @@ const reloadReveal = function (content) {
         </tr>
         `
     }
+
+    const lengthDisplay = document.getElementById('lengthDisplay');
+    lengthDisplay.innerText = content.length;
 }
 reloadReveal(words);
 

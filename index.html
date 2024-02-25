@@ -2,67 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; URL=test.html" />
   <title>Wordli</title>
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <a class="go-to" href="add.html">Add words</a>
 
-  <span class="scoreboard-parent" id="scoreboardParent">Score: <span id="scoreboard">0</span> / <span
-      id="maxScore">10</span></span>
-  <span class="winlose" id="victory">You won!</span>
-  <span class="winlose" id="gameOver">GAME OVER!</span>
-  <button id="startNewGame" onclick="startNewGame()">Start new game</button>
-
-  <div class="page-content" id="pageContent">
-
-    <div class="inputs-div">
-      <span id="german">N/A</span>
-      <input id="infinitive" type="text" placeholder="be">
-      <input id="simplePast" type="text" placeholder="was/were">
-      <input id="pastParticiple" type="text" placeholder="been">
-    </div>
-
-    <button id="checkButton" class="one-button" onclick="checkSolution(); return false;">check</button>
-    <button id="nextButton" class="one-button" onclick="nextWord(); return false;">next</button>
-
-    <span class="enter" id="enter">ENTER</span>
-
-  </div>
-
-  <div id="solutionDiv">
-    <div class="head" id="solutionHead">
-      <span>Solution</span>
-    </div>
-
-    <table class="nodisplay" id="solutionTable">
-      <tr>
-        <th>Infinitive</th>
-        <th>Simple past</th>
-        <th>Past participle</th>
-      </tr>
-
-      <tr>
-        <td id="infinitiveSolutionDisplay">N/A</td>
-        <td id="simplePastSolutionDisplay">N/A</td>
-        <td id="pastParticipleSolutionDisplay">N/A</td>
-      </tr>
-    </table>
-  </div>
-
-  <a class="feedback" title="Give feedback or report bug" href="mailto:wordli@turnbeutel-vergesser.com?subject=Wordli%20Feedback" target="_blank">
-    <img src="img/feedback.png" alt="feedback">
-  </a>
-
-  <script src="js/main.js"></script>
 </body>
 
 </html>
